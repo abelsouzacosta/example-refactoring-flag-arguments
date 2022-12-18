@@ -1,4 +1,9 @@
-import { acquireReading, baseRate, baseCharge } from "../src/main";
+import {
+  acquireReading,
+  baseRate,
+  baseCharge,
+  taxableCharge,
+} from "../src/main";
 
 describe("acquireReading", () => {
   it("should return an valid object", () => {
@@ -27,4 +32,10 @@ describe("baseCharge", () => {
 
     expect(result).toEqual(70);
   });
+});
+
+describe("taxableCharge", () => {
+  let result = taxableCharge(70, 2022);
+
+  expect(result).toEqual(67);
 });
