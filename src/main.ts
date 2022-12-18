@@ -4,3 +4,6 @@ export let acquireReading = () => ({
   month: 5,
   year: 2022,
 });
+
+export let baseRate = (month: number, year: number) =>
+  Math.floor(year / 1000) + month;
