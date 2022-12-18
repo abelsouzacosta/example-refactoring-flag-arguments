@@ -35,7 +35,9 @@ describe("baseCharge", () => {
 });
 
 describe("taxableCharge", () => {
-  let result = taxableCharge(70, 2022);
+  it("should return 67 as result with 70 baseCharge and 2022 year given", () => {
+    let result = taxableCharge(70, 2022);
 
-  expect(result).toEqual(67);
+    expect(result).toEqual(67);
+  });
 });

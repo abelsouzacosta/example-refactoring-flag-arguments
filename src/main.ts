@@ -7,6 +7,11 @@ export let acquireReading = () => ({
 
 let taxThreshold = (year: number) => 5 - Math.floor(year / 1000);
 
+// todo: [refactor] encapsulate fields
+// at this moment all functions in the code base deals with the same set of arguments
+// so, its necessary to create an class to encapsulate these fields
+// we can create a class to deal with all infomation needed
+
 export function baseRate(month: number, year: number): number {
   return Math.floor(year / 1000) + month;
 }
