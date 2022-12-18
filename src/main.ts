@@ -7,10 +7,6 @@ export let acquireReading = () => ({
 
 let taxThreshold = (year: number) => 5 - Math.floor(year / 1000);
 
-// todo: [refactor] extract function
-export let taxableCharge = (baseCharge: number, year: number) =>
-  Math.max(0, baseCharge) - taxThreshold(year);
-
 export function baseRate(month: number, year: number): number {
   return Math.floor(year / 1000) + month;
 }
@@ -21,4 +17,8 @@ export function baseCharge(
   quantity: number
 ): number {
   return baseRate(month, year) * quantity;
+}
+
+export function taxableCharge(baseCharge: number, year: number): number {
+  return Math.max(0, baseCharge) - taxThreshold(year);
 }
